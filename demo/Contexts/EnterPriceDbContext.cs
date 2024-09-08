@@ -21,6 +21,13 @@ namespace demo.Contexts
         public DbSet<Department> Departments { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Products> Products { get; set; }
+        #region fluent apis
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>().Property(e => e.Name).IsRequired(false).HasDefaultValue("Test").HasAnnotation("MaxLength","50");
+            base.OnModelCreating(modelBuilder);
+        } 
+        #endregion
 
     }
 }
