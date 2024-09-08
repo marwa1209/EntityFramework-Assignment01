@@ -1,10 +1,15 @@
-﻿namespace EntityFramework_Assignment01
+﻿using EntityFramework_Assignment01.Context;
+using Microsoft.EntityFrameworkCore;
+
+namespace EntityFramework_Assignment01
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ITIDbContext iTIDbContext = new ITIDbContext();
+            iTIDbContext.Database.Migrate();
+
         }
     }
 }

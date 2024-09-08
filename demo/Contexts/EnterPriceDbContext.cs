@@ -24,8 +24,8 @@ namespace demo.Contexts
         #region fluent apis
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().Property(e => e.Name).IsRequired(false).HasDefaultValue("Test").HasAnnotation("MaxLength","50");
-            base.OnModelCreating(modelBuilder);
+            //modelBuilder.Entity<Employee>().Property(e => e.Name).IsRequired(false).HasDefaultValue("Test").HasAnnotation("MaxLength","50");
+            //base.OnModelCreating(modelBuilder);
         } 
         #endregion
 
