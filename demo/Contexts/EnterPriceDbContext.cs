@@ -18,6 +18,9 @@ namespace demo.Contexts
             optionsBuilder.UseSqlServer("Server = . ; Database = EnterPrice ; Trusted_Connection = true");
          }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Projects> Projects { get; set; }
+        public DbSet<Products> Products { get; set; }
 
     }
 }

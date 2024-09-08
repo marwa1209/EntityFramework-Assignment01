@@ -14,6 +14,14 @@ namespace demo
             ///1.Code
             enterPriceDbContext.Database.Migrate(); //apply ups of all unapplied migration
             ///2. package manager console
+            ///
+
+
+            /// Ef supports 4 ways for mapping classes to database [Tables | Views] 
+            ///1.By Convention (Default Behaviour) 
+            ///2.Data Annotation=>flags
+            ///
+
 
         }
     }
