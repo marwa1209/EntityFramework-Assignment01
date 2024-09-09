@@ -44,7 +44,7 @@ namespace demo
             //syntax sugar
             using EnterPriceDbContext enterPriceDbContext = new EnterPriceDbContext();
             //Employee employee01 = new Employee() { Name = "Marwa", Age = 23, Email = "marwa@gagrrr.com", Salary = 20000, PhoneNumbert = "0122373747" };
-          //  Employee employee02 = new Employee() { Name = "Marwan", Age = 24, Email = "marwan@gag.com", Salary = 20000, PhoneNumbert = "0122373747" };
+            //  Employee employee02 = new Employee() { Name = "Marwan", Age = 24, Email = "marwan@gag.com", Salary = 20000, PhoneNumbert = "0122373747" };
             //Crud
             #region CRUD
             #region INSERT
@@ -80,6 +80,7 @@ namespace demo
             #endregion
             #endregion
             #region Demo Sessiion03
+            #region Inheritance
             #region TPC[table per class]
             //using AppDbContext appDbContext = new AppDbContext();
             //FullTimeEmployee employee = new FullTimeEmployee() { Name = "Marwa", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 20000 };
@@ -91,7 +92,19 @@ namespace demo
             //appDbContext.SaveChanges(); 
             #endregion
             #region TPH
-            using AppDbContext appDbContext = new AppDbContext();
+            //using AppDbContext appDbContext = new AppDbContext();
+            //FullTimeEmployee employee = new FullTimeEmployee() { Name = "Marwa", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 20000 };
+            //FullTimeEmployee employee02 = new FullTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 200000 };
+            //PartTimeEmployee employee03 = new PartTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", HourRate = 2000 };
+            //PartTimeEmployee employee04 = new PartTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", HourRate = 2000 };
+            //appDbContext.Employees.Add(employee03);
+            //appDbContext.Employees.Add(employee04);
+            //appDbContext.Employees.Add(employee);
+            //appDbContext.Employees.Add(employee02);
+            //appDbContext.SaveChanges();
+            #endregion
+            #region TPCC
+            //using AppDbContext appDbContext = new AppDbContext();
             //FullTimeEmployee employee = new FullTimeEmployee() { Name = "Marwa", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 20000 };
             //FullTimeEmployee employee02 = new FullTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 200000 };
             //PartTimeEmployee employee03 = new PartTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", HourRate = 2000 };
@@ -105,9 +118,25 @@ namespace demo
             //foreach (var item in result)
             //{
             //    Console.WriteLine(item.Name);
-            //}
+            //} 
             #endregion
-
+            #endregion
+            #region Loading Of Navigational
+            //ef core do not load Navigational Propert By Default
+            //using AppDbContext appDbContext = new AppDbContext();
+            //var result = appDbContext.Employees.FirstOrDefault(e => e.Id == 2);
+            //// Console.WriteLine(result.Work_For.Name);
+            ///Loading To Navigational Property
+            ///1.Explicit Loading
+            ///2.Easy Loading
+            ///Eager Loading
+            #region 1.Explicit Loading
+            //using AppDbContext appDbContext = new AppDbContext();
+            //var result = appDbContext.Employees.FirstOrDefault(e => e.Id == 2);
+            //appDbContext.Entry(result).Reference(e=>e.works_for).Load(); ///loading to the Navigational property
+            // Console.WriteLine(result.Work_For.Name);
+            #endregion
+            #endregion
             #endregion
         }
     }
