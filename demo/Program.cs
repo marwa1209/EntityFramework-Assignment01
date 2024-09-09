@@ -150,6 +150,20 @@ namespace demo
             //5.Make All Navigation Properties Virtual
             #endregion
             #endregion
+            #region Tracking Vs NoTracking
+            #region Tracking
+            //var result0 = appDbContext.Employees.FirstOrDefault(e => e.Id == 2);
+            //Console.WriteLine(result0.Name);
+            ////TRACKED BY DEFAULT
+            //Console.WriteLine(appDbContext.Entry(result0).State);//unchanged tracked beCAUSE THIS CHANGE IS IN DB NOT LOCAL CHABGE ONLY 
+            #endregion
+            //No tracking
+            #region NoTracking
+            //var result0 = appDbContext.Employees.AsNoTracking().FirstOrDefault(e => e.Id == 2);
+            //Console.WriteLine(result0.Name);
+            //Console.WriteLine(appDbContext.Entry(result0).State); 
+            #endregion
+            #endregion
             #endregion
         }
     }
