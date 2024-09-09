@@ -164,6 +164,37 @@ namespace demo
             //Console.WriteLine(appDbContext.Entry(result0).State); 
             #endregion
             #endregion
+            #region Remote Vs Local
+            #region Local
+            appDbContext.Employees.Load();
+
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            appDbContext.Employees.Local.Any();
+            #endregion
+
+            #region Remote
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any();
+            //appDbContext.Employees.Any(); 
+            #endregion
+            #endregion
             #endregion
         }
     }
