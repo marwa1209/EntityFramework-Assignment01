@@ -43,6 +43,7 @@ namespace demo
             Employee employee01 = new Employee() { Name = "Marwa", Age = 23, Email = "marwa@gagrrr.com", Salary = 20000, PhoneNumbert = "0122373747" };
             Employee employee02 = new Employee() { Name = "Marwan", Age = 24, Email = "marwan@gag.com", Salary = 20000, PhoneNumbert = "0122373747" };
             //Crud
+            #region CRUD
             #region INSERT
             //enterPriceDbContext.Employees.Add(employee01);
             //enterPriceDbContext.Employees.Add(employee02);
@@ -71,6 +72,10 @@ namespace demo
             enterPriceDbContext.SaveChanges();
             Console.WriteLine(enterPriceDbContext.Entry(Employee).State); //deleted
 
+
+            #endregion
+            #endregion
+            #region one to many relationship
 
             #endregion
             #endregion

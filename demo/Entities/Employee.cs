@@ -46,6 +46,13 @@ namespace demo.Entities
         public string Email { get; set; }
         [Phone]
         public string PhoneNumbert { get; set; }
+        #region one to many relationship
+        public Department Department { get; set; }
+
+        //navigitional property
+        #endregion
+        [ForeignKey("Department")]
+        public int? DepartmentDeptId { get; set; }
     }
     #endregion
 }

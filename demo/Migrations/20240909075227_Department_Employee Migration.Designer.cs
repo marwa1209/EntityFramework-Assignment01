@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using demo.Contexts;
 
@@ -11,9 +12,10 @@ using demo.Contexts;
 namespace demo.Migrations
 {
     [DbContext(typeof(EnterPriceDbContext))]
-    partial class EnterPriceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240909075227_Department_Employee Migration")]
+    partial class Department_EmployeeMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
