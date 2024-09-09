@@ -128,7 +128,7 @@ namespace demo
             //// Console.WriteLine(result.Work_For.Name);
             ///Loading To Navigational Property
             ///1.Explicit Loading
-            ///2.Easy Loading
+            ///2.lazy Loading
             ///Eager Loading
             #region 1.Explicit Loading
             //using AppDbContext appDbContext = new AppDbContext();
@@ -136,11 +136,18 @@ namespace demo
             //appDbContext.Entry(result).Reference(e=>e.works_for).Load(); ///loading to the Navigational property
             // Console.WriteLine(result.Work_For.Name);
             #endregion
-            #region Eager Loading
+            #region 2.Eager Loading
             //using AppDbContext appDbContext = new AppDbContext();
             //var result = appDbContext.Employees.Include("works_For").FirstOrDefault(e => e.Id == 2);
             //var result = appDbContext.Employees.Include(e=>e.works_for).Include(e=>e.works_for).FirstOrDefault(e => e.Id == 2);
             // Console.WriteLine(result.Work_For.Name);
+            #endregion
+            #region 3.lazy Loading
+            //1.implicity
+            //2.install-package proxies
+            //3.UseLazyLoadingProxies =>onConfigurations
+            //4.Make All The entites public
+            //5.Make All Navigation Properties Virtual
             #endregion
             #endregion
             #endregion

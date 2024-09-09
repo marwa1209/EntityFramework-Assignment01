@@ -14,6 +14,9 @@ namespace demo.Demo_Assignment03.inheritanceExample.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            #region LazyLoading
+            optionsBuilder.UseLazyLoadingProxies(); 
+            #endregion
             optionsBuilder.UseSqlServer("Server = . ; Database = Inheritance ; Trusted_Connection = true");
 
         }
