@@ -21,6 +21,8 @@ namespace demo.Contexts
         public DbSet<Department> Departments { get; set; }
         public DbSet<Projects> Projects { get; set; }
         public DbSet<Products> Products { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
         #region fluent apis
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
