@@ -104,17 +104,17 @@ namespace demo
             //appDbContext.SaveChanges();
             #endregion
             #region TPCC
-            //using AppDbContext appDbContext = new AppDbContext();
-            //FullTimeEmployee employee = new FullTimeEmployee() { Name = "Marwa", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 20000 };
+            using AppDbContext appDbContext = new AppDbContext();
+            FullTimeEmployee employee = new FullTimeEmployee() { Name = "rori", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 20000 };
             //FullTimeEmployee employee02 = new FullTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", Salary = 200000 };
             //PartTimeEmployee employee03 = new PartTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", HourRate = 2000 };
             //PartTimeEmployee employee04 = new PartTimeEmployee() { Name = "Marwan", Address = "address", Email = "kdkdkdk@gsgs.com", HourRate = 2000 };
             //appDbContext.Employees.Add(employee03);
             //appDbContext.Employees.Add(employee04);
-            //appDbContext.Employees.Add(employee);
-            //appDbContext.Employees.Add(employee02);
-            //appDbContext.SaveChanges();
-            //var result = appDbContext.Employees.OfType<FullTimeEmployee>();
+            appDbContext.Employees.Add(employee);
+          //  appDbContext.Employees.Add(employee02);
+            appDbContext.SaveChanges();
+            var result = appDbContext.Employees.OfType<FullTimeEmployee>();
             //foreach (var item in result)
             //{
             //    Console.WriteLine(item.Name);
@@ -134,6 +134,12 @@ namespace demo
             //using AppDbContext appDbContext = new AppDbContext();
             //var result = appDbContext.Employees.FirstOrDefault(e => e.Id == 2);
             //appDbContext.Entry(result).Reference(e=>e.works_for).Load(); ///loading to the Navigational property
+            // Console.WriteLine(result.Work_For.Name);
+            #endregion
+            #region Eager Loading
+            //using AppDbContext appDbContext = new AppDbContext();
+            //var result = appDbContext.Employees.Include("works_For").FirstOrDefault(e => e.Id == 2);
+            //var result = appDbContext.Employees.Include(e=>e.works_for).Include(e=>e.works_for).FirstOrDefault(e => e.Id == 2);
             // Console.WriteLine(result.Work_For.Name);
             #endregion
             #endregion
