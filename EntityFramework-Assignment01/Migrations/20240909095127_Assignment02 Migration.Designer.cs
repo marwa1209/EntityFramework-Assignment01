@@ -4,6 +4,7 @@ using EntityFramework_Assignment01.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFramework_Assignment01.Migrations
 {
     [DbContext(typeof(ITIDbContext))]
-    partial class ITIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240909095127_Assignment02 Migration")]
+    partial class Assignment02Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,10 +45,10 @@ namespace EntityFramework_Assignment01.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("Top_ID")
+                    b.Property<int>("Top_ID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TopicID")
+                    b.Property<int>("TopicID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -83,7 +85,7 @@ namespace EntityFramework_Assignment01.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<DateTime?>("HiringDate")
+                    b.Property<DateTime>("HiringDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Ins_ID")
@@ -116,7 +118,7 @@ namespace EntityFramework_Assignment01.Migrations
                     b.Property<decimal>("Bonus")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("Dept_ID")
+                    b.Property<int>("Dept_ID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("HourRate")
@@ -170,7 +172,7 @@ namespace EntityFramework_Assignment01.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Dep_ID")
+                    b.Property<int>("Dep_ID")
                         .HasColumnType("int");
 
                     b.Property<string>("FName")
@@ -209,7 +211,9 @@ namespace EntityFramework_Assignment01.Migrations
                 {
                     b.HasOne("EntityFramework_Assignment01.Entities.Topic", "Topic")
                         .WithMany("Courses")
-                        .HasForeignKey("TopicID");
+                        .HasForeignKey("TopicID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Topic");
                 });
@@ -249,7 +253,8 @@ namespace EntityFramework_Assignment01.Migrations
                     b.HasOne("EntityFramework_Assignment01.Entities.Department", "Department")
                         .WithMany("Instructors")
                         .HasForeignKey("Dept_ID")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("Department");
                 });
@@ -278,7 +283,8 @@ namespace EntityFramework_Assignment01.Migrations
                     b.HasOne("EntityFramework_Assignment01.Entities.Department", "Department")
                         .WithMany("Students")
                         .HasForeignKey("Dep_ID")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("Department");
                 });

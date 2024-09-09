@@ -14,6 +14,10 @@ namespace EntityFramework_Assignment01.Entities
         public decimal Salary { get; set; }
         public string Address { get; set; }
         public decimal HourRate { get; set; }
-        public int Dept_ID { get; set; }
+        public int? Dept_ID { get; set; }
+        #region Assignment02
+        public Department? Department { get; set; }  // Navigation property
+        public ICollection<Course_Inst> CourseInstructors { get; set; } = new HashSet<Course_Inst>();
+        #endregion
     }
 }

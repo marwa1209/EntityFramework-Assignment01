@@ -11,7 +11,9 @@ namespace EntityFramework_Assignment01.Entities
         public int Inst_ID { get; set; }
         public int Course_ID { get; set; }
         public string Evaluate { get; set; }
-        public Instructor Instructor { get; set; }
-        public Course Course { get; set; }
+        #region Assignment02
+        public Instructor? Instructor { get; set; }  // Navigation property
+        public Course ?Course { get; set; }  // Navigation property 
+        #endregion
     }
 }

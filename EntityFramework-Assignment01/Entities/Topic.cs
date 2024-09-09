@@ -10,5 +10,9 @@ namespace EntityFramework_Assignment01.Entities
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        #region Assignment02
+        public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
+
+        #endregion    
     }
 }

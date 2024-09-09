@@ -27,6 +27,8 @@ namespace EntityFramework_Assignment01.Context
         {
             modelBuilder.ApplyConfiguration(new InstructorConfiguration());
             modelBuilder.ApplyConfiguration(new StudCourseConfiguration());
+            modelBuilder.ApplyConfiguration(new CourseInstructorConfiguration());
+            modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
             modelBuilder.Entity<Course_Inst>()
     .HasKey(ci => new { ci.Inst_ID, ci.Course_ID });
         }

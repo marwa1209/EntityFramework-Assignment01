@@ -21,6 +21,13 @@ namespace EntityFramework_Assignment01.Entities
 
         public int Duration { get; set; }
 
-        public int Top_ID { get; set; }
+        public int? Top_ID { get; set; }
+
+        #region Assignment02
+
+        public Topic? Topic { get; set; }  // Navigation property
+        public ICollection<Stud_Course> StudCourses { get; set; } = new HashSet<Stud_Course>();
+        public ICollection<Course_Inst> CourseInstructors { get; set; }=new HashSet<Course_Inst>();
+        #endregion
     }
 }

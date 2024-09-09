@@ -11,5 +11,10 @@ namespace EntityFramework_Assignment01.Entities
         public int Stud_ID { get; set; }
         public int Course_ID { get; set; }
         public decimal Grade { get; set; }
+
+        #region Assignment02
+        public Student? Student { get; set; }  // Navigation property
+        public Course? Course { get; set; }  // Navigation property 
+        #endregion
     }
 }

@@ -13,15 +13,16 @@ namespace EntityFramework_Assignment01.Configrations
     {
         public void Configure(EntityTypeBuilder<Stud_Course> builder)
         {
+            // Many-to-Many: Student - Course
             builder.HasKey(sc => new { sc.Stud_ID, sc.Course_ID });
 
-            builder.HasOne<Student>()
-                .WithMany()
-                .HasForeignKey(sc => sc.Stud_ID);
+            builder.HasOne(sc => sc.Student)
+                   .WithMany(s => s.StudCourses)
+                   .HasForeignKey(sc => sc.Stud_ID);
 
-            builder.HasOne<Course>()
-                .WithMany()
-                .HasForeignKey(sc => sc.Course_ID);
+            builder.HasOne(sc => sc.Course)
+                   .WithMany(c => c.StudCourses)
+                   .HasForeignKey(sc => sc.Course_ID);
         }
     }
 
